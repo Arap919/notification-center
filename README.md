@@ -14,27 +14,27 @@ To install the library, simply run:
 ```
 NOT PUBLISHED npm install notification-center
 ```
-Then provide the FFNotificationCenterService into your Angular project (in module providers or in standalone component providers):
+Then provide the NotificationCenterService into your Angular project (in module providers or in standalone component providers):
 
 ```typescript
-import { FFNotificationCenterService } from 'notification-center';
+import { NotificationCenterService } from 'notification-center';
 
 @NgModule({
   declarations: [
   // your declarations here
   ],
   imports: [],
-  providers: [FFNotificationCenterService],
+  providers: [NotificationCenterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 ```
 
-## FFNotificationCenterService methods
+## NotificationCenterService methods
 
 1) attachNotifications - attach notification center to the dom:
 ```typescript
-attachNotifications(parentElement: ElementRef, data: Observable<FFNotification[]>, titleComponent: Type<unknown> | null = null): void {}
+attachNotifications(parentElement: ElementRef, data: Observable<Notification[]>, titleComponent: Type<unknown> | null = null): void {}
 ```
 ### Parameters
 
@@ -48,11 +48,11 @@ disposeNotifications(): void {}
 ```
 
 ## Usage
-After importing, you can use the FFNotificationCenterService to display notifications in your components. Here's an example:
+After importing, you can use the NotificationCenterService to display notifications in your components. Here's an example:
 
 ```typescript
 import { Component } from '@angular/core';
-import { FFNotificationCenterService, FFNotification } from 'notification-center';
+import { NotificationCenterService, Notification } from 'notification-center';
 
 @Component({
   selector: 'app-my-component',
@@ -60,10 +60,10 @@ import { FFNotificationCenterService, FFNotification } from 'notification-center
 })
 export class MyComponent {
   @ViewChild('parentElement') parentElement: MatIconButton;
-  notifications$$: Observable<FFNotification[]> = this._persistRepo.notifications$$;
+  notifications$$: Observable<Notification[]> = this._persistRepo.notifications$$;
 
   constructor(
-    private notificationCenterService: FFNotificationCenterService,
+    private notificationCenterService: NotificationCenterService,
     private _persistRepo: PersistenceRepository
   ) {}
   
@@ -78,7 +78,7 @@ export class MyComponent {
 You can configure the notification center by providing config:
 
 ```typescript
-const notificationsConfig: FFNotificationsOverlayConfig = {
+const notificationsConfig:NotificationsOverlayConfig = {
   positionX: 'end',
   positionY: 'top'
 };
