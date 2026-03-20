@@ -2,13 +2,13 @@ import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges, Vi
 import { CommonModule } from '@angular/common';
 import { FFNotification } from '../models/notification.model';
 import { BehaviorSubject, tap } from 'rxjs';
-import { nextOnChangeComparePrevValue } from '@ff/utils';
 import { ComponentPortal, PortalModule } from '@angular/cdk/portal';
 import { fadeInItems, transformMenu } from '../animations/notification-animations';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { nextOnChangeComparePrevValue } from '../functions/next-on-change-compare-prev-value';
 
 @Component({
-    selector: 'ff-notifications-list',
+    selector: 'of-notifications-list',
     imports: [CommonModule, PortalModule],
     templateUrl: './notifications-list.component.html',
     styleUrls: ['./notifications-list.component.scss'],

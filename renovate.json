@@ -1,5 +1,0 @@
-{
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>FFSW_LLP_Design/npm/renovate_bot"],
-  "baseBranches": ["develop"]
-}

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FFNotificationCenterService } from './notification-center.service';
+import { NotificationCenterService } from './notification-center.service';
 import { FFNotificationsOverlayConfig } from './models/notifications-overlay.config';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { Component, ElementRef, ViewChild } from '@angular/core';
@@ -20,7 +20,7 @@ describe('NotificationCenterService', () => {
     positionX: 'end',
     positionY: 'top'
   };
-  let service: FFNotificationCenterService;
+  let service: NotificationCenterService;
 
   beforeEach( () => {
     TestBed.configureTestingModule({
@@ -29,10 +29,10 @@ describe('NotificationCenterService', () => {
       ],
       declarations: [TestComponent],
       providers: [
-        FFNotificationCenterService
+        NotificationCenterService
       ]
     });
-    service = TestBed.inject(FFNotificationCenterService);
+    service = TestBed.inject(NotificationCenterService);
     fixture = TestBed.createComponent(TestComponent);
     fixture.detectChanges();
   });

@@ -9,7 +9,7 @@ import { FF_NOTIFICATIONS_DATA, FF_NOTIFICATIONS_TITLE } from './const/notificat
 import { FFNotificationsOverlayConfig } from './models/notifications-overlay.config';
 
 @Injectable()
-export class FFNotificationCenterService {
+export class NotificationCenterService {
   private _unsubscribe$: Subject<void> = new Subject<void>();
   private _overlayRef: OverlayRef;
   private _onScroll$: Observable<Event>;

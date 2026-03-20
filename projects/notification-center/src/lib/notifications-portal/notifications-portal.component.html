@@ -3,5 +3,5 @@
      (@transformMenu.start)="onAnimationStart()"
      (@transformMenu.done)="onAnimationDone($event)">
   <ng-template [cdkPortalOutlet]="portal" *ngIf='titleComponent != null'></ng-template>
-  <ff-notifications-list [notifications]='data | async'></ff-notifications-list>
+  <of-notifications-list [notifications]='(data | async) ?? []'></of-notifications-list>
 </div>

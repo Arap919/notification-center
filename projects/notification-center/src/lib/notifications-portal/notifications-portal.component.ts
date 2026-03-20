@@ -9,7 +9,7 @@ import { transformMenu } from '../animations/notification-animations';
 import { AnimationEvent } from '@angular/animations';
 
 @Component({
-    selector: 'ff-notifications-portal',
+    selector: 'of-notifications-portal',
     imports: [CommonModule, NotificationsListComponent, PortalModule],
     templateUrl: './notifications-portal.component.html',
     styleUrls: ['./notifications-portal.component.scss'],

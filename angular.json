@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/notification-center",
       "sourceRoot": "projects/notification-center/src",
-      "prefix": "ff",
+      "prefix": "of",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",

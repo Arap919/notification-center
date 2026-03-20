@@ -3,7 +3,7 @@ import { NotificationsListComponent } from './notifications-list.component';
 import { Component, ElementRef, SimpleChanges, SimpleChange, ViewChild } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FFNotification } from '../models/notification.model';
-import { randomString } from '@ff/utils';
+import {randomString} from "../functions/random-string";
 
 @Component({
     selector: 'ff-test',

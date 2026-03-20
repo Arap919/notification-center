@@ -1,0 +1,10 @@
+{
+  "root": true,
+  "extends": [
+    "./eslint-config-lib-angular/index.js"
+  ],
+  "ignorePatterns" : [
+    "projects/**/*.spec.ts",
+    "projects/utils/test.ts"
+  ]
+}
