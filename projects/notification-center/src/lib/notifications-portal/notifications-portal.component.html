@@ -1,0 +1,7 @@
+<div class='notifications-container'
+     [@transformMenu]="_panelAnimationState"
+     (@transformMenu.start)="onAnimationStart()"
+     (@transformMenu.done)="onAnimationDone($event)">
+  <ng-template [cdkPortalOutlet]="portal" *ngIf='titleComponent != null'></ng-template>
+  <ff-notifications-list [notifications]='data | async'></ff-notifications-list>
+</div>

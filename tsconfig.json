@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig.json",
+  "compileOnSave": false,
+  "angularCompilerOptions": {
+    "compilationMode": "partial",
+    "preserveWhitespaces": false,
+    "annotateForClosureCompiler": false,
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true,
+    "fullTemplateTypeCheck": false,
+    "strictInjectionParameters": true,
+    "enableResourceInlining": true,
+    "strictLiteralTypes": true,
+    "strictInputTypes": true,
+    "strictInputAccessModifiers": true,
+    "strictNullInputTypes": true,
+    "strictAttributeTypes": true,
+    "strictSafeNavigationTypes": true,
+    "strictDomLocalRefTypes": true,
+    "strictOutputEventTypes": true,
+    "strictDomEventTypes": true,
+    "strictContextGenerics": true
+  },
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2022",
+    "module": "es2022",
+    "lib": [
+      "es2022",
+      "dom"
+    ],
+    "declaration": false,
+    "declarationMap": false,
+    "moduleResolution": "bundler",
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "newLine": "lf",
+    "alwaysStrict": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noStrictGenericChecks": false,
+    "allowUmdGlobalAccess": true,
+    "useDefineForClassFields": false,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitOverride": true,
+    "isolatedModules": false,
+    "noEmitHelpers": true,
+    "pretty": true,
+    "stripInternal": false,
+    "noUncheckedIndexedAccess": false,
+    "verbatimModuleSyntax": false,
+    "noPropertyAccessFromIndexSignature": false,
+    "removeComments": false,
+    "noEmitOnError": true,
+    "allowJs": true,
+    "checkJs": true,
+    "disableSizeLimit": true,
+    "strictNullChecks": true,
+    "preserveSymlinks": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": false,
+    "incremental": true,
+    "baseUrl": ".",
+    "outDir": "dist/notification-center",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "node"
+    ],
+    "paths": {
+      "notification-center": [
+        "./dist/notification-center"
+      ]
+    }
+  }
+}

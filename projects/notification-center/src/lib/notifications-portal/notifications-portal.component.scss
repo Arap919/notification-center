@@ -1,0 +1,12 @@
+$card-bg: var(--ff-card-bg, #fff);
+$border-color: var(--ff-border-color, #d3d3d3);
+$border-radius: var(--ff-border-radius, 4px);
+$border-width: var(--ff-border-width-1, 1px);
+$notifications-card-padding: var(--ff-spacer-5, 1rem);
+
+.notifications-container {
+  background-color: $card-bg;
+  border: $border-color $border-width solid;
+  border-radius: $border-radius;
+  padding: $notifications-card-padding;
+}
