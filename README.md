@@ -12,12 +12,12 @@ This Angular library provides a simple and customizable notification center for 
 To install the library, simply run:
 
 ```
-npm install @ff/notification-center
+NOT PUBLISHED npm install notification-center
 ```
 Then provide the FFNotificationCenterService into your Angular project (in module providers or in standalone component providers):
 
 ```typescript
-import { FFNotificationCenterService } from '@ff/notification-center';
+import { FFNotificationCenterService } from 'notification-center';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,7 @@ After importing, you can use the FFNotificationCenterService to display notifica
 
 ```typescript
 import { Component } from '@angular/core';
-import { FFNotificationCenterService, FFNotification } from '@ff/notification-center';
+import { FFNotificationCenterService, FFNotification } from 'notification-center';
 
 @Component({
   selector: 'app-my-component',
@@ -84,7 +84,7 @@ const notificationsConfig: FFNotificationsOverlayConfig = {
 };
 ...
 
-{ provide: FF_NOTIFICATIONS_CONFIG, useValue: notificationsConfig }
+{ provide: NOTIFICATIONS_CONFIG, useValue: notificationsConfig }
 ```
 
 - positionX: specify the horizontal position of the notification center (start, center, end).

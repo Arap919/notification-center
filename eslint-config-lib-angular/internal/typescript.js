@@ -143,7 +143,7 @@ module.exports = {
                             'PascalCase'
                         ],
                         'custom': {
-                            'regex': '^FF[A-Z]',
+                            'regex': '^[A-Z]',
                             'match': true
                         }
                     },

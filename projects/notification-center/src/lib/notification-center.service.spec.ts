@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NotificationCenterService } from './notification-center.service';
-import { FFNotificationsOverlayConfig } from './models/notifications-overlay.config';
+import { NotificationsOverlayConfig } from './models/notifications-overlay.config';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { of } from 'rxjs';
@@ -16,7 +16,7 @@ export class TestComponent {
 
 describe('NotificationCenterService', () => {
   let fixture: ComponentFixture<TestComponent>;
-  const notificationsConfig: FFNotificationsOverlayConfig = {
+  const notificationsConfig: NotificationsOverlayConfig = {
     positionX: 'end',
     positionY: 'top'
   };

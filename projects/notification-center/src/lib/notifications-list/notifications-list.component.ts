@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges, ViewChild, ViewContainerRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FFNotification } from '../models/notification.model';
+import { Notification } from '../models/notification.model';
 import { BehaviorSubject, tap } from 'rxjs';
 import { ComponentPortal, PortalModule } from '@angular/cdk/portal';
 import { fadeInItems, transformMenu } from '../animations/notification-animations';
@@ -16,12 +16,12 @@ import { nextOnChangeComparePrevValue } from '../functions/next-on-change-compar
     animations: [transformMenu(), fadeInItems()]
 })
 export class NotificationsListComponent implements OnChanges {
-  private _notifications$$: BehaviorSubject<FFNotification[]> = new BehaviorSubject<FFNotification[]>([]);
+  private _notifications$$: BehaviorSubject<Notification[]> = new BehaviorSubject<Notification[]>([]);
   private _isFirstOpened: boolean = true;
 
   _itemAnimationState: 'void' | 'showing' = 'void';
 
-  @Input() notifications: FFNotification[];
+  @Input() notifications: Notification[];
   @ViewChild('container', { read: ViewContainerRef }) container: ViewContainerRef;
 
   portals: { id: string; portal: ComponentPortal<unknown> }[] = [];

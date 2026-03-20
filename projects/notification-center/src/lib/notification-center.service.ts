@@ -1,12 +1,12 @@
 import { ElementRef, inject, Injectable, Injector, Renderer2, RendererFactory2, Type } from '@angular/core';
 import { ConnectionPositionPair, FlexibleConnectedPositionStrategy, Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 import { fromEventPattern, Observable, Subject, tap, timer } from 'rxjs';
-import { FFNotification } from './models/notification.model';
+import { Notification } from './models/notification.model';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { NotificationsPortalComponent } from './notifications-portal/notifications-portal.component';
 import { NotificationsPositionX, NotificationsPositionY } from './models/notifications-positions.model';
-import { FF_NOTIFICATIONS_DATA, FF_NOTIFICATIONS_TITLE } from './const/notifications-token';
-import { FFNotificationsOverlayConfig } from './models/notifications-overlay.config';
+import { NOTIFICATIONS_DATA, NOTIFICATIONS_TITLE } from './const/notifications-token';
+import { NotificationsOverlayConfig } from './models/notifications-overlay.config';
 
 @Injectable()
 export class NotificationCenterService {
@@ -14,7 +14,7 @@ export class NotificationCenterService {
   private _overlayRef: OverlayRef;
   private _onScroll$: Observable<Event>;
   private _parentElement: ElementRef;
-  private _config: FFNotificationsOverlayConfig;
+  private _config: NotificationsOverlayConfig;
 
   private readonly _overlay: Overlay = inject(Overlay);
   private readonly _rendererFactory2: RendererFactory2 = inject(RendererFactory2);
@@ -27,14 +27,14 @@ export class NotificationCenterService {
     ).subscribe();
   }
 
-  attachNotifications(parentElement: ElementRef, data: Observable<FFNotification[]>): void;
-  attachNotifications(parentElement: ElementRef, data: Observable<FFNotification[]>, positionConfig: FFNotificationsOverlayConfig | null): void;
-  attachNotifications(parentElement: ElementRef, data: Observable<FFNotification[]>, titleComponent: Type<unknown> | null): void;
-  attachNotifications(parentElement: ElementRef, data: Observable<FFNotification[]>, positionConfig: FFNotificationsOverlayConfig | null, titleComponent: Type<unknown> | null): void;
+  attachNotifications(parentElement: ElementRef, data: Observable<Notification[]>): void;
+  attachNotifications(parentElement: ElementRef, data: Observable<Notification[]>, positionConfig: NotificationsOverlayConfig | null): void;
+  attachNotifications(parentElement: ElementRef, data: Observable<Notification[]>, titleComponent: Type<unknown> | null): void;
+  attachNotifications(parentElement: ElementRef, data: Observable<Notification[]>, positionConfig: NotificationsOverlayConfig | null, titleComponent: Type<unknown> | null): void;
   attachNotifications(
     parentElement: ElementRef,
-    data: Observable<FFNotification[]>,
-    positionConfigOrTitle?: FFNotificationsOverlayConfig | null | Type<unknown>,
+    data: Observable<Notification[]>,
+    positionConfigOrTitle?: NotificationsOverlayConfig | null | Type<unknown>,
     titleComponent?: Type<unknown> | null
   ): void {
     this._config = {
@@ -62,8 +62,8 @@ export class NotificationCenterService {
       null,
       Injector.create({
         providers: [
-          { provide: FF_NOTIFICATIONS_DATA, useValue: data },
-          { provide: FF_NOTIFICATIONS_TITLE, useValue: positionConfigOrTitle instanceof Type ? positionConfigOrTitle : titleComponent }
+          { provide: NOTIFICATIONS_DATA, useValue: data },
+          { provide: NOTIFICATIONS_TITLE, useValue: positionConfigOrTitle instanceof Type ? positionConfigOrTitle : titleComponent }
         ],
       })
     );

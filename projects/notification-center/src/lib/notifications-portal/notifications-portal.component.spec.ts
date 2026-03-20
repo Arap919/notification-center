@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NotificationsPortalComponent } from './notifications-portal.component';
-import { FF_NOTIFICATIONS_DATA, FF_NOTIFICATIONS_TITLE } from '../const/notifications-token';
+import { NOTIFICATIONS_DATA, NOTIFICATIONS_TITLE } from '../const/notifications-token';
 import { of } from 'rxjs';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,8 +26,8 @@ describe('NotificationsPortalComponent', () => {
         NotificationsPortalComponent
       ],
       providers: [
-        { provide: FF_NOTIFICATIONS_DATA, useValue: of([]) },
-        { provide: FF_NOTIFICATIONS_TITLE, useValue: TestTitleComponent }
+        { provide: NOTIFICATIONS_DATA, useValue: of([]) },
+        { provide: NOTIFICATIONS_TITLE, useValue: TestTitleComponent }
       ]
     });
     fixture = TestBed.createComponent(NotificationsPortalComponent);

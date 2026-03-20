@@ -1,9 +1,9 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, inject, OnDestroy, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NotificationsListComponent } from '../notifications-list/notifications-list.component';
-import { FFNotification } from '../models/notification.model';
+import { Notification } from '../models/notification.model';
 import { Observable, Subject } from 'rxjs';
-import { FF_NOTIFICATIONS_DATA, FF_NOTIFICATIONS_TITLE } from '../const/notifications-token';
+import { NOTIFICATIONS_DATA, NOTIFICATIONS_TITLE } from '../const/notifications-token';
 import { ComponentPortal, PortalModule } from '@angular/cdk/portal';
 import { transformMenu } from '../animations/notification-animations';
 import { AnimationEvent } from '@angular/animations';
@@ -22,8 +22,8 @@ export class NotificationsPortalComponent implements AfterViewInit, OnDestroy {
   _isAnimating: boolean;
   portal: ComponentPortal<unknown>;
 
-  readonly data: Observable<FFNotification[]> = inject<Observable<FFNotification[]>>(FF_NOTIFICATIONS_DATA);
-  readonly titleComponent: Type<unknown> | null = inject<Type<unknown> | null>(FF_NOTIFICATIONS_TITLE);
+  readonly data: Observable<Notification[]> = inject<Observable<Notification[]>>(NOTIFICATIONS_DATA);
+  readonly titleComponent: Type<unknown> | null = inject<Type<unknown> | null>(NOTIFICATIONS_TITLE);
 
   constructor() {
     if (this.titleComponent != null) {

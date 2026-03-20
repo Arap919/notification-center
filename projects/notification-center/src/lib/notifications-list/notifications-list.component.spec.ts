@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NotificationsListComponent } from './notifications-list.component';
 import { Component, ElementRef, SimpleChanges, SimpleChange, ViewChild } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FFNotification } from '../models/notification.model';
+import { Notification } from '../models/notification.model';
 import {randomString} from "../functions/random-string";
 
 @Component({
@@ -35,7 +35,7 @@ describe('NotificationsListComponent', () => {
   });
 
   it('should update notifications on changes', () => {
-    const notifications: FFNotification[] = [
+    const notifications: Notification[] = [
       {
         id: randomString(),
         component: TestComponent,
@@ -49,13 +49,13 @@ describe('NotificationsListComponent', () => {
     component.ngOnChanges(changesObj);
     fixture.detectChanges();
 
-    component['_notifications$$'].subscribe((ffNotifications: FFNotification[]) => {
+    component['_notifications$$'].subscribe((ffNotifications: Notification[]) => {
       expect(ffNotifications).toEqual(notifications);
     });
   });
 
   it('should create portal for notification component', () => {
-    const notifications: FFNotification[] = [
+    const notifications: Notification[] = [
       {
         id: randomString(),
         component: TestComponent,
@@ -75,7 +75,7 @@ describe('NotificationsListComponent', () => {
   });
 
   it('should start animation if component is created and new notifications is pushed', () => {
-    const notifications: FFNotification[] = [
+    const notifications: Notification[] = [
       {
         id: randomString(),
         component: TestComponent,
@@ -83,7 +83,7 @@ describe('NotificationsListComponent', () => {
       }
     ];
 
-    const newNotifications: FFNotification[] = [
+    const newNotifications: Notification[] = [
       {
         id: randomString(),
         component: TestComponent,
